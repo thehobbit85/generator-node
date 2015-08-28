@@ -1,7 +1,7 @@
 <% if (babel) { -%>
-export default {};
+export default {}
 <% } else { -%>
-'use strict';
+'use strict'
 
-module.exports = {};
+module.exports = {}
 <% } -%>

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-'use strict';
+'use strict'
 <% if (babel) { -%>
-import meow from 'meow';
-import <%= pkgSafeName %> from './';
-import pkg from '../';
+import meow from 'meow'
+import <%= pkgSafeName %> from './'
+import pkg from '../'
 <% } else { -%>
-var meow = require('meow');
-var <%= pkgSafeName %> = require('./');
-var pkg = require('../');
+var meow = require('meow')
+var <%= pkgSafeName %> = require('./')
+var pkg = require('../')
 <% } -%>
 
 var cli = meow({
@@ -26,4 +26,4 @@ var cli = meow({
     'Options',
     ' --foo Lorem ipsum. Default: false'
   ]
-});
+})
