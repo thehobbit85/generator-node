@@ -174,6 +174,9 @@ module.exports = generators.Base.extend({
         coverage: 'istanbul cover _mocha -- -R spec',
         coveralls: 'cat ./coverage/lcov.info | coveralls'
       },
+      'standard': {
+        'global': ['describe', 'it' ]
+      },
       main: this.props.babel ? 'dist/index.js' : 'lib/index.js',
       keywords: this.props.keywords
     };

@@ -1,9 +1,8 @@
-'use strict'
 <% if (includeCoveralls) { -%>
 var path = require('path')
 <% } -%>
 var gulp = require('gulp')
-var eslint = require('gulp-eslint')
+var standard = require('gulp-standard')
 var excludeGitignore = require('gulp-exclude-gitignore')
 var mocha = require('gulp-mocha')
 var istanbul = require('gulp-istanbul')
@@ -24,9 +23,11 @@ require('babel-core/register')
 gulp.task('static', function () {
   return gulp.src('**/*.js')
     .pipe(excludeGitignore())
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError())
+    .pipe(standard())
+    .pipe(standard.reporter('default', {
+      breakOnError: true,
+      breakOnWarning: false
+    }))
 })
 
 gulp.task('nsp', function (cb) {
@@ -37,9 +38,8 @@ gulp.task('pre-test', function () {
   return gulp.src('lib/**/*.js')
     .pipe(istanbul({
       includeUntested: true
-<% if (babel) { -%>,
-      instrumenter: isparta.Instrumenter
-<% } -%>
+<% if (babel) { -%>,instrumenter: isparta.Instrumenter
+  <% } -%>
     }))
     .pipe(istanbul.hookRequire())
 })
