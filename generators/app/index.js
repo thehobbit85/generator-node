@@ -196,14 +196,6 @@ module.exports = generators.Base.extend({
       local: require.resolve('../editorconfig')
     });
 
-    this.composeWith('node:eslint', {
-      options: {
-        es2015: this.props.babel
-      }
-    }, {
-      local: require.resolve('../eslint')
-    });
-
     this.composeWith('node:git', {
       options: {
         repositoryPath: this.props.repository
