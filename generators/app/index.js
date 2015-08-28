@@ -169,6 +169,11 @@ module.exports = generators.Base.extend({
       files: [
         this.props.babel ? 'dist' : 'lib'
       ],
+      scripts: {
+        test: 'mocha',
+        coverage: 'istanbul cover _mocha -- -R spec',
+        coveralls: 'cat ./coverage/lcov.info | coveralls'
+      },
       main: this.props.babel ? 'dist/index.js' : 'lib/index.js',
       keywords: this.props.keywords
     };

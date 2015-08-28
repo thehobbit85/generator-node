@@ -1,23 +1,32 @@
-# <%= projectName %> [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]<%
-if (includeCoveralls) { %> [![Coverage percentage][coveralls-image]][coveralls-url]<% } -%>
+# <%= projectName %> [![Build Status][travis-image]][travis-url] <% if (includeCoveralls) { %> [![Coverage percentage][coveralls-image]][coveralls-url]<% } -%> [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 > <%= description %>
 
 
-## Install
+### Install
 
 ```sh
-$ npm install --save <%= projectName %>
+$ npm i --save <%= projectName %>
 ```
 
 
-## Usage
+### Usage
 
 ```js
 var <%= safeProjectName %> = require('<%= projectName %>');
 
 <%= safeProjectName %>('Rainbow');
 ```
+
+### Testing
+
+In order to test you need to install [mocha] on your machine
+
+```sh
+$ cd /"module-path"/<%= projectName %>
+$ mocha
+```
+
 
 ## License
 
@@ -34,3 +43,4 @@ var <%= safeProjectName %> = require('<%= projectName %>');
 [coveralls-image]: https://coveralls.io/repos/<%= githubAccount %>/<%= projectName %>/badge.svg
 [coveralls-url]: https://coveralls.io/r/<%= githubAccount %>/<%= projectName %>
 <% } -%>
+[mocha]:https://www.npmjs.com/package/mocha
