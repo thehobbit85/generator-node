@@ -170,7 +170,6 @@ module.exports = generators.Base.extend({
         this.props.babel ? 'dist' : 'lib'
       ],
       scripts: {
-        test: 'mocha',
         coverage: 'istanbul cover _mocha -- -R spec',
         coveralls: 'cat ./coverage/lcov.info | coveralls'
       },

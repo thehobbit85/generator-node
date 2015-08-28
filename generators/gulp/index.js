@@ -55,10 +55,11 @@ module.exports = generators.Base.extend({
 
     gulpfile: function () {
       var tasks = ['static', 'test'];
-      var prepublishTasks = ['nsp'];
+      var prepublishTasks = ['static', 'test', 'nsp'];
 
       if (this.options.coveralls) {
         tasks.push('coveralls');
+        prepublishTasks.push('coveralls');
       }
 
       if (this.options.babel) {
