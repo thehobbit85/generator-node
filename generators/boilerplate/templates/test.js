@@ -1,3 +1,5 @@
+/* global describe, it */
+
 <% if (babel) { -%>
 import assert from 'assert'
 import <%= pkgSafeName %> from '../lib'
